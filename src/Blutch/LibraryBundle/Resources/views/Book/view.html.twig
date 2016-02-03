@@ -1,0 +1,30 @@
+{% extends "BlutchLibraryBundle::layout.html.twig" %}
+
+{% block title %}{{ book.title }}{% endblock %}
+{% block description %}Description du livre {{ book.title }}{% endblock %}
+
+{% block article_title %}{{ book.title }}{% endblock %}
+
+{% block body %}
+	<div class="section-block section-informations">
+		<p>{{ "blutch.library.book.fields.author"|trans }} : <a href="{{ path("library_author_view", {"id": book.author.id}) }}">{{ book.author.getFullName() }}</a>
+		<p>{{ "blutch.library.book.fields.publisher"|trans }} : {{ book.publisher }}</p>
+		<p>{{ "blutch.library.book.fields.pages-number"|trans }} : {{ book.pageNumber }}</p>
+		<p>
+			{{ "blutch.library.book.fields.genres"|trans }} : 
+			{% for genre in book.bookGenres %}
+				<a href="{{ path("library_bookgenre_view", {"id": genre.id}) }}">{{ genre.description }}</a>
+				{% if loop.last == false %}
+					{{ ", " }} 
+				{% endif %}
+			{% else %}
+				{{ "blutch.library.book.view.no-genre"|trans }}
+			{% endfor %}
+		</p>
+	</div>
+	
+	<div class="section-block">
+		<p><strong>{{ "blutch.library.book.view.book-summary"|trans }}</strong></p>
+		<p>{{ book.summary }}</p>
+	</div>
+{% endblock %}

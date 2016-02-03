@@ -1,0 +1,16 @@
+{% extends "BlutchLibraryBundle::layout.html.twig" %}
+
+{% block article_title %}{{ "blutch.library.bookgenre.edit.article-title"|trans }} {{ bookGenre.description }}{% endblock %}
+
+{% block body %}
+	{{ include("BlutchLibraryBundle:BookGenre:form.html.twig") }}
+
+	<p>
+		<a href="{{ path("library_bookgenre_view", {"id": bookGenre.id}) }}" class="btn btn-default">
+			<i class="glyphicon glyphicon-chevron-left"></i>
+			{{ "blutch.library.bookgenre.edit.back-button"|trans }}
+		</a>
+		{{ form_widget(form.save, { "label": "blutch.library.bookgenre.edit.submit-button"|trans, "attr": {"class": "btn btn-success"}}) }}
+ 	</p>
+ 	{{ form_end(form) }}
+{% endblock %}

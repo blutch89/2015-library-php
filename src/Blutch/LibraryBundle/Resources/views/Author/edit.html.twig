@@ -1,0 +1,16 @@
+{% extends "BlutchLibraryBundle::layout.html.twig" %}
+
+{% block article_title %}{{ "blutch.library.author.edit.article-title"|trans }} {{ author.getFullName() }}{% endblock %}
+
+{% block body %}
+	{{ include("BlutchLibraryBundle:Author:form.html.twig") }}
+
+	<p>
+		<a href="{{ path("library_author_view", {"id": author.id}) }}" class="btn btn-default">
+			<i class="glyphicon glyphicon-chevron-left"></i>
+			{{ "blutch.library.author.edit.back-button"|trans }}
+		</a>
+		{{ form_widget(form.save, { "label": "blutch.library.author.edit.submit-button"|trans, "attr": {"class": "btn btn-success"}}) }}
+ 	</p>
+ 	{{ form_end(form) }}
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "BlutchLibraryBundle::layout.html.twig" %}
+
+{% block title %}{{ "blutch.library.bookgenre.index.title"|trans }}{% endblock %}
+{% block description %}{{ "blutch.library.bookgenre.index.description"|trans }}{% endblock %}
+
+{% block article_title %}{{ "blutch.library.bookgenre.index.article-title"|trans }}{% endblock %}
+
+{% block body %}
+	<table class="table table-striped">
+		<tr>
+			<th>{{ "blutch.library.bookgenre.fields.description"|trans }}</th>
+			{% if is_granted("ROLE_ADMIN") %}
+				<th>{{ "blutch.library.bookgenre.index.actes"|trans }}</th>
+			{% endif %}
+		</tr>
+		{% for bookGenre in bookGenres %}
+			<tr>
+				<td><a href="{{ path("library_bookgenre_view", {"id": bookGenre.id}) }}">{{ bookGenre.description }}</a></td>
+				{% if is_granted("ROLE_ADMIN") %}
+					<td class="common-table-actions">
+						<a href="{{ path("library_bookgenre_edit", {"id": bookGenre.id}) }}"><span class="glyphicon glyphicon-edit"></span></a>
+						<a href="{{ path("library_bookgenre_delete", {"id": bookGenre.id}) }}"><span class="glyphicon glyphicon-remove"></span></a>
+					</td>
+				{% endif %}
+			</tr>
+		{% else %}
+			{{ "blutch.library.bookgenre.index.no-bookgenre"|trans }}
+		{% endfor %}
+	</table>
+{% endblock %}

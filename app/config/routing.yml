@@ -1,0 +1,18 @@
+root:
+    pattern: /
+    defaults:
+        _controller: FrameworkBundle:Redirect:urlRedirect
+        path: /fr
+        permanent: true
+
+blutch_library:
+    resource: "@BlutchLibraryBundle/Resources/config/routing.yml"
+    prefix:   /{_locale}/
+    requirements:
+        _locale: en|fr
+
+fos_user_security:
+    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
+    prefix:   /{_locale}/
+    requirements:
+        _locale: en|fr

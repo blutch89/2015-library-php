@@ -1,0 +1,23 @@
+{% extends "BlutchLibraryBundle::layout.html.twig" %}
+
+{% block title %}{{ "blutch.library.author.view.title"|trans }} {{ author.getFullName() }}{% endblock %}
+{% block description %}{{ "blutch.library.author.view.description"|trans }}{{ author.getFullName() }}{% endblock %}
+
+{% block article_title %}{{ "blutch.library.author.view.article-title"|trans }} {{ author.getFullName() }}{% endblock %}
+
+{% block body %}
+	<div class="section-block section-informations">
+		<p>{{ "blutch.library.author.fields.birthdate"|trans }} : {{ author.birthDate|localizeddate("short", "none") }}</p>
+	</div>
+	
+	<div class="section-block">
+		<p><strong>{{ "blutch.library.author.view.author-biography"|trans }}</strong></p>
+		<p>{{ author.biography }}</p>
+	</div>
+	
+	<div class="section-block">
+		<p><strong>{{ "blutch.library.author.view.author-books"|trans }}</strong></p>
+		{{ include("BlutchLibraryBundle:Book:books-table.html.twig") }}
+	</div>
+	
+{% endblock %}

@@ -1,0 +1,17 @@
+book:
+    title:
+        not-blank: Please fill the title field.
+    page-number:
+        regex: Please enter a number.
+    author:
+        not-blank: lease fill the author field.
+author:
+    first-name:
+        not-blank: Please fill the firstname field.
+    last-name:
+        not-blank: Please fill the lastname field.
+    birthdate:
+        date: Please enter a date.
+bookgenre:
+    description:
+        not-blank: Please fill the description field.

@@ -1,0 +1,51 @@
+body {
+	font-size: 13px;
+}
+
+/* Header */
+.jumbotron {
+	background-color: #B6BDEA;
+}
+
+.jumbotron p {
+	font-size: 250%;
+}
+
+/* Navigation */
+.nav-title {
+	font-size: 140%;
+	margin-top: 0px;
+	margin-bottom: 10px;
+}
+
+.nav-ul {
+	margin-bottom: 30px;
+}
+
+/* Contenu */
+h1 {
+	font-size: 140%;
+	margin-top: 0px;
+	margin-bottom: 30px;
+}
+
+/* Footer */
+footer {
+	height: 40px;
+	width: 100%;
+	margin-top: 60px;
+	color: white;
+	background-color: #2F2F2F;
+	text-align: center;
+	line-height: 40px;
+}
+
+/* Extra small devices */
+@media (max-width: 768px) {
+	.jumbotron p {
+		font-size: 180%;
+	}
+	
+	footer {
+	font-size: 70%;}
+}

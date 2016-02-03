@@ -1,0 +1,13 @@
+services:
+    blutch_library.changelogger_processor:
+        class:     Blutch\LibraryBundle\Services\Logger\ChangeLoggerProcessor
+        arguments: [@logger]
+
+    blutch_library.changelogger_listener:
+        class:     Blutch\LibraryBundle\Services\Logger\ChangeLoggerListener
+        arguments: [@blutch_library.changelogger_processor]
+        tags:
+            - { name: kernel.event_listener, event: blutch_library.changelogger_eventname, method: doLog }
+            
+    blutch_library.changelogger_event:
+        class: Blutch\LibraryBundle\Services\Logger\ChangeLoggerEvent

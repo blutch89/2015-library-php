@@ -1,0 +1,21 @@
+.section-block {
+	margin-bottom: 30px;
+}
+
+.section-informations p {
+	font-style: italic;
+}
+
+.common-table-actions {
+	text-align: right;
+}
+
+.common-table-actions a {
+	color: red;
+}
+
+.author-form-birthdate {
+	width: 32% !important;
+	margin-right: 1.33%;
+	float: left;
+}

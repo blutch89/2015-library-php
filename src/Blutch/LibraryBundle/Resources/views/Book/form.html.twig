@@ -1,0 +1,32 @@
+{{ form_start(form, {attr: {novalidate: 'novalidate'}}) }}
+	<div class="form-group">
+		{{ form_label(form.title, "blutch.library.book.fields.title"|trans ) }}
+	    {{ form_errors(form.title) }}
+	    {{ form_widget(form.title, {"attr": {"class": "form-control"}}) }}
+	</div>
+	<div class="form-group">
+		{{ form_label(form.author, "blutch.library.book.fields.author"|trans) }}
+	    {{ form_errors(form.author) }}
+	    {{ form_widget(form.author, {"attr": {"class": "form-control"}}) }}
+	</div>
+	<div class="form-group">
+		{{ form_label(form.publisher, "blutch.library.book.fields.publisher"|trans) }}
+	    {{ form_errors(form.publisher) }}
+	    {{ form_widget(form.publisher, {"attr": {"class": "form-control"}}) }}
+	</div>
+	<div class="form-group">
+		{{ form_label(form.bookGenres, "blutch.library.book.fields.genres"|trans) }}
+	    {{ form_errors(form.bookGenres) }}
+	    {{ form_widget(form.bookGenres, {"attr": {"class": "form-control"}}) }}
+	</div>
+	<div class="form-group">
+		{{ form_label(form.pageNumber, "blutch.library.book.fields.pages-number"|trans) }}
+	    {{ form_errors(form.pageNumber) }}
+	    {{ form_widget(form.pageNumber, {"attr": {"class": "form-control"}}) }}
+	</div>
+	<div class="form-group">
+		{{ form_label(form.summary, "blutch.library.book.fields.summary"|trans) }}
+	    {{ form_errors(form.summary) }}
+	    {{ form_widget(form.summary, {"attr": {"class": "form-control"}}) }}
+	</div>
+	

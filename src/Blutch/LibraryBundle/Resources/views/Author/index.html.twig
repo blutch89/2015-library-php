@@ -1,0 +1,33 @@
+{% extends "BlutchLibraryBundle::layout.html.twig" %}
+
+{% block title %}{{ "blutch.library.author.index.title"|trans }}{% endblock %}
+{% block description %}{{ "blutch.library.author.index.description"|trans }}{% endblock %}
+
+{% block article_title %}{{ "blutch.library.author.add.article-title"|trans }}{% endblock %}
+
+{% block body %}
+	<table class="table table-striped">
+		<tr>
+			<th>{{ "blutch.library.author.index.author"|trans }}</th>
+			<th>{{ "blutch.library.author.fields.birthdate"|trans }}</th>
+			{% if is_granted("ROLE_ADMIN") %}
+				<th>{{ "blutch.library.author.index.actes"|trans }}</th>
+			{% endif %}
+		</tr>
+		
+		{% for author in authors %}
+			<tr>
+				<td><a href="{{ path("library_author_view", {"id": author.id}) }}">{{ author.getFullName() }}</a></td>
+				<td>{{ author.birthDate|localizeddate("short", "none") }}</td>
+				{% if is_granted("ROLE_ADMIN") %}
+					<td class="common-table-actions">
+						<a href="{{ path("library_author_edit", {"id": author.id}) }}"><span class="glyphicon glyphicon-edit"></span></a>
+						<a href="{{ path("library_author_delete", {"id": author.id}) }}"><span class="glyphicon glyphicon-remove"></span></a>
+					</td>
+				{% endif %}
+			</tr>
+		{% else %}
+			{{ "blutch.library.author.index.no-author"|trans }}
+		{% endfor %}
+	</table>
+{% endblock %}

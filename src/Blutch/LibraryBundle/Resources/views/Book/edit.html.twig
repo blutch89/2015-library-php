@@ -1,0 +1,16 @@
+{% extends "BlutchLibraryBundle::layout.html.twig" %}
+
+{% block article_title %}{{ "blutch.library.book.edit.article-title"|trans }} {{ book.title }}{% endblock %}
+
+{% block body %}
+	{{ include("BlutchLibraryBundle:Book:form.html.twig") }}
+
+	<p>
+		<a href="{{ path("library_book_view", {"id": book.id}) }}" class="btn btn-default">
+			<i class="glyphicon glyphicon-chevron-left"></i>
+			{{ "blutch.library.book.edit.back-button"|trans }}
+		</a>
+		{{ form_widget(form.save, { "label": "blutch.library.book.edit.submit-button"|trans, "attr": {"class": "btn btn-success"}}) }}
+ 	</p>
+ 	{{ form_end(form) }}
+{% endblock %}

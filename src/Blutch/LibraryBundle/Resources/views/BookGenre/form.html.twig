@@ -1,0 +1,7 @@
+{{ form_start(form, {attr: {novalidate: 'novalidate'}}) }}
+	<div class="form-group">
+		{{ form_label(form.description, "blutch.library.bookgenre.fields.description"|trans) }}
+	    {{ form_errors(form.description) }}
+	    {{ form_widget(form.description, {"attr": {"class": "form-control"}}) }}
+	</div>
+	

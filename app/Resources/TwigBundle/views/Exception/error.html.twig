@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>{{ "error.title"|trans }}</title>
+  </head>
+  <body>
+    <h1>{{ "error.title"|trans }}</h1>
+    <p>{{ "error.description"|trans({"%status_code%": status_code}) }}</p>
+  </body>
+</html>

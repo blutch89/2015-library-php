@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="{{ app.request.getLocale() }}" manifest="library.appcache">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>{{ "template.site-title"|trans }} - {% block title %}{{ "template.title-welcome"|trans }}{% endblock %}</title>
+		<meta name="description" content="{% block description %}{% endblock %}" />
+		<link rel="icon" type="image/png" href={{ asset("favicon.png") }} />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		{% stylesheets filter="cssrewrite"
+			"css/main.css"
+			"@BlutchLibraryBundle/Resources/public/css/librarybundle.css" %}
+			<link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+		{% endstylesheets %}
+	</head>
+	<body>
+		<header class="jumbotron">
+			<div class="container">
+				<div class="pull-right">
+					<div>
+						{% set route = app.request.get('_route') %}
+						{% set route_params = app.request.get('_route_params') %}
+						
+						{% if app.request.getLocale() == "fr" %}
+							<a href="{{ path(route, route_params | merge({ "_locale": "en" })) }}">EN </a>
+						{% elseif app.request.getLocale() == "en" %}
+							<a href="{{ path(route, route_params | merge({ "_locale": "fr" })) }}">FR </a>
+						{% else %}
+							<a href="{{ path(route, route_params | merge({ "_locale": "fr" })) }}">FR </a>
+						{% endif %}
+					</div>
+					<div>
+						{% if is_granted("ROLE_ADMIN") %}
+							{{ app.user }} - <a href="{{ path("fos_user_security_logout") }}">{{ "template.deconnection"|trans }}</a>
+						{% else %}
+							<a href="{{ path("fos_user_security_login") }}">{{ "template.connection"|trans }}</a> ({{ "template.login-included"|trans }})
+						{% endif %}
+					</div>					
+				</div>
+				<p><span class="glyphicon glyphicon-book"></span> {{ "template.site-main-title"|trans }}</p>
+			</div>
+		</header>
+		
+		{% for messages in app.session.flashbag.all() %}
+			{% for message in messages %}
+				<div class="container">
+					<p class="bg-info">{{ message }}</p>
+				</div>
+			{% endfor %}
+		{% endfor %}
+		
+		<div class="container">
+			<div class="row">
+				<nav class="col-sm-12 col-md-4">
+					<p class="nav-title">{{ "template.main-menu-title"|trans }}</p>
+					<ul class="nav nav-pills nav-stacked nav-ul">
+						<li role="presentation"><a href="{{ path("homepage") }}">{{ "template.menu-books"|trans }}</a></li>
+						<li role="presentation"><a href="{{ path("library_author_list") }}">{{ "template.menu-authors"|trans }}</a></li>
+						<li role="presentation"><a href="{{ path("library_bookgenre_list") }}">{{ "template.menu-genres"|trans }}</a></li>
+					</ul>
+					
+					{% if is_granted("ROLE_ADMIN") %}
+						<p class="nav-title">{{ "template.admin-menu-title"|trans }}</p>
+						<ul class="nav nav-pills nav-stacked nav-ul">
+							<li role="presentation"><a href="{{ path("library_book_add") }}">{{ "template.menu-add-book"|trans }}</a></li>
+							<li role="presentation"><a href="{{ path("library_author_add") }}">{{ "template.menu-add-author"|trans }}</a></li>
+							<li role="presentation"><a href="{{ path("library_bookgenre_add") }}">{{ "template.menu-add-genre"|trans }}</a></li>
+						</ul>
+					{% endif %}
+				</nav>
+				<article class="col-sm-12 col-md-8">
+					<header>
+						<h1>{% block article_title %}{% endblock %}</h1>
+					</header>
+					{% block body %}
+						
+					{% endblock %}
+				</article>
+			</div>
+		</div>
+		<footer>
+			{{ "template.footer"|trans }}
+		</footer>
+		
+	
+		
+	</body>
+</html>

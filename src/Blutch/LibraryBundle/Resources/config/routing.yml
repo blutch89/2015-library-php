@@ -1,0 +1,79 @@
+homepage:
+    path: /
+    defaults: { _controller: BlutchLibraryBundle:Book:index }
+    
+library_book_view:
+    path: /book/{id}
+    defaults: { _controller: BlutchLibraryBundle:Book:view }
+    requirements:
+        id: \d+
+        
+library_book_add:
+    path: /book/add
+    defaults: { _controller: BlutchLibraryBundle:Book:add }
+    
+library_book_edit:
+    path: /book/edit/{id}
+    defaults: { _controller: BlutchLibraryBundle:Book:edit }
+    requirements:
+        id: \d+
+        
+library_book_delete:
+    path: /book/delete/{id}
+    defaults: { _controller: BlutchLibraryBundle:Book:delete }
+    requirements:
+        id: \d+
+        
+library_author_list:
+    path: /author/list
+    defaults: { _controller: BlutchLibraryBundle:Author:index }
+    
+library_author_view:
+    path: /author/{id}
+    defaults: { _controller: BlutchLibraryBundle:Author:view }
+    requirements:
+        id: \d+
+        
+library_author_add:
+    path: /author/add
+    defaults: { _controller: BlutchLibraryBundle:Author:add }
+    
+library_author_edit:
+    path: /author/edit/{id}
+    defaults: { _controller: BlutchLibraryBundle:Author:edit }
+    requirements:
+        id: \d+
+        
+library_author_delete:
+    path: /author/delete/{id}
+    defaults: { _controller: BlutchLibraryBundle:Author:delete }
+    requirements:
+        id: \d+
+        
+library_bookgenre_list:
+    path: /genre/list
+    defaults: { _controller: BlutchLibraryBundle:BookGenre:index }
+    
+library_bookgenre_view:
+    path: /genre/{id}
+    defaults: { _controller: BlutchLibraryBundle:BookGenre:view }
+    requirements:
+        id: \d+
+        
+library_bookgenre_add:
+    path: /genre/add
+    defaults: { _controller: BlutchLibraryBundle:BookGenre:add }
+    
+library_bookgenre_edit:
+    path: /genre/edit/{id}
+    defaults: { _controller: BlutchLibraryBundle:BookGenre:edit }
+    requirements:
+        id: \d+
+        
+library_bookgenre_delete:
+    path: /genre/delete/{id}
+    defaults: { _controller: BlutchLibraryBundle:BookGenre:delete }
+    requirements:
+        id: \d+
+
+

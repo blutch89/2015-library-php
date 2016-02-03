@@ -1,0 +1,12 @@
+{% extends "BlutchLibraryBundle::layout.html.twig" %}
+
+{% block title %}{{ "blutch.library.bookgenre.view.title"|trans }} {{ bookGenre.description }}{% endblock %}
+{% block description %}{{ "blutch.library.bookgenre.view.description"|trans }} {{ bookGenre.description }}{% endblock %}
+
+{% block article_title %}{{ "blutch.library.bookgenre.view.article-title"|trans }} {{ bookGenre.description }}{% endblock %}
+
+{% block body %}
+	<div class="section-block">
+		{{ include("BlutchLibraryBundle:Book:books-table.html.twig") }}
+	</div>	
+{% endblock %}

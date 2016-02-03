@@ -1,0 +1,10 @@
+{% extends "BlutchLibraryBundle::layout.html.twig" %}
+
+{% block title %}{{ "blutch.library.book.index.title"|trans }}{% endblock %}
+{% block description %}{{ "blutch.library.book.index.description"|trans }}{% endblock %}
+
+{% block article_title %}{{ "blutch.library.book.index.article-title"|trans }}{% endblock %}
+
+{% block body %}
+	{{ include("BlutchLibraryBundle:Book:books-table.html.twig") }}
+{% endblock %}

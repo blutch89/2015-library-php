@@ -1,0 +1,18 @@
+{% extends "BlutchLibraryBundle::layout.html.twig" %}
+
+{% block article_title %}{{ "blutch.library.book.delete.article-title"|trans }} "{{ book.title }}"{% endblock %}
+
+{% block body %}
+	<p>{{ "blutch.library.book.delete.delete-message"|trans }}</p>
+
+	<form action="{{ path("library_book_delete", {"id": book.id}) }}" method="post">
+		<a href="{{ path("library_book_view", {"id": book.id}) }}" class="btn btn-default">
+			<i class="glyphicon glyphicon-chevron-left"></i>
+			{{ "blutch.library.book.delete.back-button"|trans }}
+		</a>
+    
+		<input type="submit" value="{{ "blutch.library.book.delete.submit-button"|trans }}" class="btn btn-danger" />
+		{# Ceci va générer le champ CSRF #}
+		{{ form_rest(form) }}
+	</form>
+{% endblock %}

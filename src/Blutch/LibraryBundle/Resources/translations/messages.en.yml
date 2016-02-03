@@ -1,0 +1,131 @@
+template:
+    site-title: Library
+    title-welcome: Welcome
+    site-main-title: Great lib
+    main-menu-title: Library content
+    menu-books: Books
+    menu-authors: Authors
+    menu-genres: Genres
+    admin-menu-title: Admin
+    menu-add-book: Add a book
+    menu-add-author: Add an author
+    menu-add-genre: Add a genre
+    connection: Connection
+    deconnection: Deconnection
+    login-included: login included
+    footer: Site developped as an exercice for Symfony2 and not for the design.
+
+blutch:
+    library:
+        book:
+            exceptions:
+                not-found: This book doesn't exist.
+            fields:
+                title: Title
+                author: Author
+                publisher: Publisher
+                genres: Genres
+                pages-number: Pages number
+                summary: Summary
+            table:
+                actes: Actes
+                no-book: No book found.
+            index:
+                title: List of books
+                description: List of books of the great library.
+                article-title: List of books
+            view:
+                title: ""
+                description: Description of the book
+                article-title: ""
+                no-genre: No genre.
+                book-summary: Book summary
+            add:
+                article-title: Add a book
+                back-button: Back to home
+                submit-button: Add
+                flashbag: Book added.
+            edit:
+                article-title: Modification of
+                back-button: Back to book
+                submit-button: Edit
+                flashbag: Book edited.
+            delete:
+                article-title: Suppression of 
+                delete-message: Are you sure you want to delete this book ?
+                back-button: Back to book
+                submit-button: Delete
+                flashbag: Book deleted.
+        author:
+            exceptions:
+                not-found: This author doesn't exist.
+            fields:
+                first-name: Firstname
+                last-name: Lastname
+                birthdate: Birthdate
+                biography: Biography
+            index:
+                title: List of authors
+                description: List of authors of the great library.
+                article-title: List of authors
+                author: Author
+                actes: Actes
+                no-author: No author found.
+            view:
+                title: ""
+                description: Record of 
+                article-title: ""
+                author-biography: Author's biography
+                author-books: Author's books
+            add:
+                article-title: Add an author
+                back-button: Back to home
+                submit-button: Add
+                flashbag: Author added.
+            edit:
+                article-title: Modification of
+                back-button: Back to author
+                submit-button: Edit
+                flashbag: Author edited.
+            delete:
+                article-title: Suppression of
+                delete-message: Are you sure you want to delete this author ?
+                back-button: back to home
+                submit-button: Delete
+                flashbag: Author deleted.
+        bookgenre:
+            exceptions:
+                not-found: The genre doesn't exist.
+            fields:
+                description: Description
+            index:
+                title: List of genres
+                description: List of genres of the great library.
+                article-title: List of genres
+                actes: Actes
+                no-bookgenre: No genre found.
+            view:
+                title: Books of 
+                description: Books of
+                article-title: Books of
+            add:
+                article-title: Add a genre
+                back-button: Back to home
+                submit-button: Add
+                flashbag: Genre added.
+            edit:
+                article-title: Modification of
+                back-button: Back to genre
+                submit-button: Edit
+                flashbag: Genre edited.
+            delete:
+                article-title: Suppression of
+                delete-message: Are you sure you want to delete this genre ?
+                back-button: Back to genre
+                submit-button: Delete
+                flashbag: Genre deleted.
+error:
+    title: Error occured
+    description: The server returned an error %status_code%.
+            
+            

@@ -1,0 +1,131 @@
+template:
+    site-title: Bibliothèque
+    title-welcome: Bienvenue
+    site-main-title: Super Biblio
+    main-menu-title: Contenu de la bibliothèque
+    menu-books: Livres
+    menu-authors: Auteurs
+    menu-genres: Genres
+    admin-menu-title: Admin
+    menu-add-book: Ajouter un livre
+    menu-add-author: Ajouter un auteur
+    menu-add-genre: Ajouter un genre
+    connection: Connexion
+    deconnection: Deconnexion
+    login-included: identifiants inclus
+    footer: Créé par Thomas Gigon. Site développé comme exercice à Symfony2 et non pour le design.
+
+blutch:
+    library:
+        book:
+            exceptions:
+                not-found: Le livre spécifié n'existe pas.
+            fields:
+                title: Titre
+                author: Auteur
+                publisher: Éditeur
+                genres: Genres
+                pages-number: Nb. de pages
+                summary: Résumé
+            table:
+                actes: Actions
+                no-book: Aucun livre trouvé.
+            index:
+                title: Liste des livres
+                description: Liste des livres de la super bibliothèque.
+                article-title: Liste des livres
+            view:
+                title: ""
+                description: Description du livre 
+                article-title: ""
+                no-genre: Aucun genre.
+                book-summary: Résumé du livre
+            add:
+                article-title: Ajout d'un livre
+                back-button: Retour à l'accueil
+                submit-button: Ajouter
+                flashbag: Livre ajouté.
+            edit:
+                article-title: Modification de
+                back-button: Retour au livre
+                submit-button: Modifier
+                flashbag: Livre modifié.
+            delete:
+                article-title: Suppression du livre 
+                delete-message: Etes-vous certain de vouloir supprimer le livre ?
+                back-button: Retour au livre
+                submit-button: Supprimer
+                flashbag: Livre supprimé.
+        author:
+            exceptions:
+                not-found: L'auteur spécifié n'existe pas.
+            fields:
+                first-name: Prénom
+                last-name: Nom
+                birthdate: Date de naissance
+                biography: Biographie
+            index:
+                title: Liste des auteurs
+                description: Liste des auteurs de la super bibliothèque.
+                article-title: Liste des auteurs
+                author: Auteur
+                actes: Actions
+                no-author: Aucun auteur trouvé.
+            view:
+                title: ""
+                description: Fiche de 
+                article-title: ""
+                author-biography: Biographie de l'auteur
+                author-books: Livres de l'auteur
+            add:
+                article-title: Ajout d'un auteur
+                back-button: Retour à l'accueil
+                submit-button: Ajouter
+                flashbag: Auteur ajouté.
+            edit:
+                article-title: Modification de
+                back-button: Retour à l'auteur
+                submit-button: Modifier
+                flashbag: Auteur modifié.
+            delete:
+                article-title: Suppression de
+                delete-message: Etes-vous certain de vouloir supprimer cet auteur ?
+                back-button: Retour à l'auteur
+                submit-button: Supprimer
+                flashbag: Auteur supprimé.
+        bookgenre:
+            exceptions:
+                not-found: Le genre spécifié n'existe pas.
+            fields:
+                description: Description
+            index:
+                title: Liste des genres
+                description: Liste des genres de la super bibliothèque.
+                article-title: Liste des genres
+                actes: Actions
+                no-bookgenre: Aucun genre trouvé.
+            view:
+                title: Livres de
+                description: Livres de
+                article-title: Livres de
+            add:
+                article-title: Ajout d'un genre
+                back-button: Retour à l'accueil
+                submit-button: Ajouter
+                flashbag: Genre ajouté.
+            edit:
+                article-title: Modification de
+                back-button: Retour au genre
+                submit-button: Modifier
+                flashbag: Genre modifié.
+            delete:
+                article-title: Suppression du genre
+                delete-message: Etes-vous certain de vouloir supprimer ce genre ?
+                back-button: Retour au genre
+                submit-button: Supprimer
+                flashbag: Genre supprimé.
+error:
+    title: Problème survenu
+    description: Le server a retourné une erreur %status_code%.
+            
+            
